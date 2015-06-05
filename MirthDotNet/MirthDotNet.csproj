@@ -66,6 +66,11 @@
     <Compile Include="Model\ConnectorFilter.cs" />
     <Compile Include="Model\ConnectorProperties.cs" />
     <Compile Include="Model\ConnectorTransformer.cs" />
+    <Compile Include="Model\DataTypeDeserializationProperties.cs" />
+    <Compile Include="Model\DataTypeProperties.cs" />
+    <Compile Include="Model\DataTypeResponseGenerationProperties.cs" />
+    <Compile Include="Model\DataTypeResponseValidationProperties.cs" />
+    <Compile Include="Model\DataTypeSerializationProperties.cs" />
     <Compile Include="Model\DestinationConnectorProperties.cs" />
     <Compile Include="Model\JavaScriptStep.cs" />
     <Compile Include="Model\FlatMessageRow.cs" />

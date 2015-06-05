@@ -31,5 +31,7 @@ namespace MirthDotNet.Model
         public ConnectorFilter Filter { get; set; }
         [XmlElement("transformer")]
         public ConnectorTransformer Transformer { get; set; }
+        [XmlElement("responseTransformer")]
+        public ConnectorTransformer ResponseTransformer { get; set; }
     }
 }

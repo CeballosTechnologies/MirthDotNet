@@ -21,5 +21,10 @@ namespace MirthDotNet.Model
         public string OutboundTemplateBase64 { get; set; }
         [XmlElement("outboundDataType")]
         public string OutboundDataType { get; set; }
+
+        [XmlElement("inboundProperties")]
+        public DataTypeProperties InboundProperties { get; set; }
+        [XmlElement("outboundProperties")]
+        public DataTypeProperties OutboundProperties { get; set; }
     }
 }
