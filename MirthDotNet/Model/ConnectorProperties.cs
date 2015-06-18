@@ -95,5 +95,24 @@ namespace MirthDotNet.Model
         public string CharsetEncoding { get; set; }
         [XmlElement("template")]
         public string Template { get; set; }
+
+        [XmlElement("scheme")]
+        public string Scheme { get; set; }
+        [XmlElement("host")]
+        public string Host { get; set; }
+        [XmlElement("outputPattern")]
+        public string OutputPattern { get; set; }
+        [XmlElement("username")]
+        public string Username { get; set; }
+        [XmlElement("password")]
+        public string Password { get; set; }
+        [XmlElement("timeout")]
+        public string Timeout { get; set; }
+        [XmlElement("secure")]
+        public bool Secure { get; set; }
+        [XmlElement("passive")]
+        public bool Passive { get; set; }
+        [XmlElement("binary")]
+        public bool Binary { get; set; }
     }
 }
