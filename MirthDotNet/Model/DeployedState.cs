@@ -8,6 +8,6 @@ namespace MirthDotNet.Model
 {
     public enum DeployedState
     {
-        STARTING, STARTED, PAUSING, PAUSED, STOPPING, STOPPED
+        STARTING, STARTED, PAUSING, PAUSED, STOPPING, STOPPED, DEPLOYING, UNDEPLOYING
     }
 }

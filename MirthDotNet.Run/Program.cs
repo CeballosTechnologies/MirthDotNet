@@ -16,12 +16,16 @@ namespace MirthDotNet
         public const string ClientUsername = "admin";
         public const string ClientPassword = "admin";
 
+        private static bool doPurge = false;
 
         public static void Main(string[] args)
         {
             ListChannels();
             FindFailedToDeployConnectors();
-            PurgeERRORMessages();
+            if (doPurge)
+            {
+                PurgeERRORMessages();
+            }
         }
 
         public static void TestMessageSearch()
