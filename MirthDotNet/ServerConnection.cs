@@ -19,12 +19,16 @@ namespace MirthDotNet
         public const int DefaultTimeout = (100 * 1000);
         private const string AuthCookieName = "JSESSIONID";
 
-        public ServerConnection(string address, int timeout = DefaultTimeout)
+        public ServerConnection(string address, int timeout = DefaultTimeout, bool tlsOnly = false)
         {
             this.address = address;
             this.timeout = timeout;
 
             this.baseAddress = new Uri(address);
+
+            ServicePointManager.SecurityProtocol = tlsOnly ?
+                SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls :
+                SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
         }
 
         private readonly string address;

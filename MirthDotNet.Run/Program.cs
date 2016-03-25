@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using MirthDotNet.Model;
 
 namespace MirthDotNet
@@ -16,16 +12,25 @@ namespace MirthDotNet
         public const string ClientUsername = "admin";
         public const string ClientPassword = "admin";
 
+        private static bool doServerId = true;
+        private static bool doListChannels = false;
+        private static bool doFindFailed = false;
         private static bool doPurge = false;
 
         public static void Main(string[] args)
         {
-            ListChannels();
-            FindFailedToDeployConnectors();
-            if (doPurge)
-            {
-                PurgeERRORMessages();
-            }
+            if (doServerId)     GetServerId();
+            if (doListChannels) ListChannels();
+            if (doFindFailed)   FindFailedToDeployConnectors();
+            if (doPurge)        PurgeERRORMessages();
+        }
+
+        public static void GetServerId()
+        {
+            var client = new Client(ClientUrl, timeout: int.MaxValue, tlsOnly: false);
+            var loginStatus = client.Login(ClientUsername, ClientPassword, "0.0.0");
+            var response = client.GetServerId();
+            client.Logout();
         }
 
         public static void TestMessageSearch()

@@ -27,10 +27,10 @@ namespace MirthDotNet
         public const string EXTENSION_SERVLET = "/extensions";
         public const string ENGINE_SERVLET = "/engine";
 
-        public Client(string address, int timeout = ServerConnection.DefaultTimeout)
+        public Client(string address, int timeout = ServerConnection.DefaultTimeout, bool tlsOnly = false)
         {
             this.address = address;
-            this.connection = new ServerConnection(address, timeout);
+            this.connection = new ServerConnection(address, timeout, tlsOnly);
             this.ServerLog = new ServerLog(this);
             this.DashboardConnectorStatus = new DashboardConnectorStatus(this);
             this.ChannelHistory = new ChannelHistory(this);
